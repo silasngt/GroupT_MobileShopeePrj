@@ -40,41 +40,46 @@
             // lblAdminUser
             // 
             this.lblAdminUser.AutoSize = true;
-            this.lblAdminUser.Location = new System.Drawing.Point(39, 54);
+            this.lblAdminUser.Location = new System.Drawing.Point(78, 104);
+            this.lblAdminUser.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAdminUser.Name = "lblAdminUser";
-            this.lblAdminUser.Size = new System.Drawing.Size(57, 13);
+            this.lblAdminUser.Size = new System.Drawing.Size(113, 25);
             this.lblAdminUser.TabIndex = 0;
             this.lblAdminUser.Text = "UserName";
             // 
             // txtAdminUser
             // 
-            this.txtAdminUser.Location = new System.Drawing.Point(102, 51);
+            this.txtAdminUser.Location = new System.Drawing.Point(204, 98);
+            this.txtAdminUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAdminUser.Name = "txtAdminUser";
-            this.txtAdminUser.Size = new System.Drawing.Size(172, 20);
+            this.txtAdminUser.Size = new System.Drawing.Size(340, 31);
             this.txtAdminUser.TabIndex = 1;
             // 
             // txtAdminPass
             // 
-            this.txtAdminPass.Location = new System.Drawing.Point(102, 86);
+            this.txtAdminPass.Location = new System.Drawing.Point(204, 165);
+            this.txtAdminPass.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtAdminPass.Name = "txtAdminPass";
-            this.txtAdminPass.Size = new System.Drawing.Size(172, 20);
+            this.txtAdminPass.Size = new System.Drawing.Size(340, 31);
             this.txtAdminPass.TabIndex = 3;
             this.txtAdminPass.UseSystemPasswordChar = true;
             // 
             // lblAdminPass
             // 
             this.lblAdminPass.AutoSize = true;
-            this.lblAdminPass.Location = new System.Drawing.Point(39, 89);
+            this.lblAdminPass.Location = new System.Drawing.Point(78, 171);
+            this.lblAdminPass.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAdminPass.Name = "lblAdminPass";
-            this.lblAdminPass.Size = new System.Drawing.Size(53, 13);
+            this.lblAdminPass.Size = new System.Drawing.Size(106, 25);
             this.lblAdminPass.TabIndex = 2;
             this.lblAdminPass.Text = "Password";
             // 
             // btnAdminLogin
             // 
-            this.btnAdminLogin.Location = new System.Drawing.Point(199, 128);
+            this.btnAdminLogin.Location = new System.Drawing.Point(398, 246);
+            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdminLogin.Size = new System.Drawing.Size(150, 44);
             this.btnAdminLogin.TabIndex = 4;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = true;
@@ -83,19 +88,22 @@
             // lnkAdminForgot
             // 
             this.lnkAdminForgot.AutoSize = true;
-            this.lnkAdminForgot.Location = new System.Drawing.Point(233, 164);
+            this.lnkAdminForgot.Location = new System.Drawing.Point(466, 315);
+            this.lnkAdminForgot.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lnkAdminForgot.Name = "lnkAdminForgot";
-            this.lnkAdminForgot.Size = new System.Drawing.Size(92, 13);
+            this.lnkAdminForgot.Size = new System.Drawing.Size(186, 25);
             this.lnkAdminForgot.TabIndex = 5;
             this.lnkAdminForgot.TabStop = true;
             this.lnkAdminForgot.Text = "Forgot Password?";
+            this.lnkAdminForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAdminForgot_LinkClicked);
             // 
             // lnkBack
             // 
             this.lnkBack.AutoSize = true;
-            this.lnkBack.Location = new System.Drawing.Point(12, 22);
+            this.lnkBack.Location = new System.Drawing.Point(24, 42);
+            this.lnkBack.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lnkBack.Name = "lnkBack";
-            this.lnkBack.Size = new System.Drawing.Size(32, 13);
+            this.lnkBack.Size = new System.Drawing.Size(60, 25);
             this.lnkBack.TabIndex = 6;
             this.lnkBack.TabStop = true;
             this.lnkBack.Text = "Back";
@@ -103,9 +111,9 @@
             // 
             // frmAdminLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 202);
+            this.ClientSize = new System.Drawing.Size(724, 388);
             this.Controls.Add(this.lnkBack);
             this.Controls.Add(this.lnkAdminForgot);
             this.Controls.Add(this.btnAdminLogin);
@@ -113,6 +121,7 @@
             this.Controls.Add(this.lblAdminPass);
             this.Controls.Add(this.txtAdminUser);
             this.Controls.Add(this.lblAdminUser);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmAdminLogin";
             this.Text = "Admin Login ";
             this.ResumeLayout(false);
