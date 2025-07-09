@@ -1,0 +1,15 @@
+﻿# Build
+bin/
+obj/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.ncb
+*.sdf
+*.opensdf
+*.cachefile
+
+# Packages
+packages/
