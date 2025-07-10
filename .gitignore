@@ -13,3 +13,6 @@ obj/
 
 # Packages
 packages/
+
+# App.config
+App.config
