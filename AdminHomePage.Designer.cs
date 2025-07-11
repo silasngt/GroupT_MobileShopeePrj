@@ -41,8 +41,8 @@ namespace GroupT_MobileShopeePrj
             this.lblCompId = new System.Windows.Forms.Label();
             this.tabPageModel = new System.Windows.Forms.TabPage();
             this.btnAddModel = new System.Windows.Forms.Button();
-            this.lblModelName = new System.Windows.Forms.Label();
-            this.txtModelName = new System.Windows.Forms.TextBox();
+            this.lblModelNum = new System.Windows.Forms.Label();
+            this.txtModelNum = new System.Windows.Forms.TextBox();
             this.cmbCName = new System.Windows.Forms.ComboBox();
             this.lblCName = new System.Windows.Forms.Label();
             this.txtModelId = new System.Windows.Forms.TextBox();
@@ -113,6 +113,40 @@ namespace GroupT_MobileShopeePrj
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.lblEmployeeName = new System.Windows.Forms.Label();
+            this.lblListOfCompany = new System.Windows.Forms.Label();
+            this.lvwListOfCompany = new System.Windows.Forms.ListView();
+            this.chCompId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblListOfModel = new System.Windows.Forms.Label();
+            this.lvwListOfModel = new System.Windows.Forms.ListView();
+            this.chModelId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chModelCName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chModelNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chQty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblListOfMobile = new System.Windows.Forms.Label();
+            this.lvwListOfMobile = new System.Windows.Forms.ListView();
+            this.chMobileCName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMobileModelNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMobileImeiNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMobilePrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMobileWarranty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblListStockOfProduct = new System.Windows.Forms.Label();
+            this.lvwListStockOfProduct = new System.Windows.Forms.ListView();
+            this.chUpdateTransId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUpdateCName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUpdateModelNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUpdateQuantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUpdateAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUpdateDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chMobileStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblListOfUser = new System.Windows.Forms.Label();
+            this.lvwListOfUser = new System.Windows.Forms.ListView();
+            this.chUserName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUserAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUserMobile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUserUName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUserHint = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControlAdminHome.SuspendLayout();
             this.tabAdd.SuspendLayout();
             this.tabControlSubAdmin.SuspendLayout();
@@ -136,7 +170,7 @@ namespace GroupT_MobileShopeePrj
             this.tabControlAdminHome.Location = new System.Drawing.Point(2, 4);
             this.tabControlAdminHome.Name = "tabControlAdminHome";
             this.tabControlAdminHome.SelectedIndex = 0;
-            this.tabControlAdminHome.Size = new System.Drawing.Size(399, 415);
+            this.tabControlAdminHome.Size = new System.Drawing.Size(447, 475);
             this.tabControlAdminHome.TabIndex = 0;
             // 
             // tabAdd
@@ -145,7 +179,7 @@ namespace GroupT_MobileShopeePrj
             this.tabAdd.Location = new System.Drawing.Point(4, 22);
             this.tabAdd.Name = "tabAdd";
             this.tabAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdd.Size = new System.Drawing.Size(391, 389);
+            this.tabAdd.Size = new System.Drawing.Size(439, 449);
             this.tabAdd.TabIndex = 0;
             this.tabAdd.Text = "Add";
             this.tabAdd.UseVisualStyleBackColor = true;
@@ -158,11 +192,13 @@ namespace GroupT_MobileShopeePrj
             this.tabControlSubAdmin.Location = new System.Drawing.Point(3, 6);
             this.tabControlSubAdmin.Name = "tabControlSubAdmin";
             this.tabControlSubAdmin.SelectedIndex = 0;
-            this.tabControlSubAdmin.Size = new System.Drawing.Size(382, 377);
+            this.tabControlSubAdmin.Size = new System.Drawing.Size(440, 447);
             this.tabControlSubAdmin.TabIndex = 0;
             // 
             // tabPageCompany
             // 
+            this.tabPageCompany.Controls.Add(this.lvwListOfCompany);
+            this.tabPageCompany.Controls.Add(this.lblListOfCompany);
             this.tabPageCompany.Controls.Add(this.btnAdd);
             this.tabPageCompany.Controls.Add(this.txtCompName);
             this.tabPageCompany.Controls.Add(this.lblCompName);
@@ -171,14 +207,14 @@ namespace GroupT_MobileShopeePrj
             this.tabPageCompany.Location = new System.Drawing.Point(4, 22);
             this.tabPageCompany.Name = "tabPageCompany";
             this.tabPageCompany.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCompany.Size = new System.Drawing.Size(374, 351);
+            this.tabPageCompany.Size = new System.Drawing.Size(432, 421);
             this.tabPageCompany.TabIndex = 0;
             this.tabPageCompany.Text = "Company";
             this.tabPageCompany.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(141, 165);
+            this.btnAdd.Location = new System.Drawing.Point(171, 138);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 4;
@@ -188,7 +224,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtCompName
             // 
-            this.txtCompName.Location = new System.Drawing.Point(127, 111);
+            this.txtCompName.Location = new System.Drawing.Point(157, 96);
             this.txtCompName.Name = "txtCompName";
             this.txtCompName.Size = new System.Drawing.Size(174, 20);
             this.txtCompName.TabIndex = 3;
@@ -196,7 +232,7 @@ namespace GroupT_MobileShopeePrj
             // lblCompName
             // 
             this.lblCompName.AutoSize = true;
-            this.lblCompName.Location = new System.Drawing.Point(36, 114);
+            this.lblCompName.Location = new System.Drawing.Point(66, 99);
             this.lblCompName.Name = "lblCompName";
             this.lblCompName.Size = new System.Drawing.Size(85, 13);
             this.lblCompName.TabIndex = 2;
@@ -204,16 +240,16 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtCompId
             // 
-            this.txtCompId.Location = new System.Drawing.Point(110, 71);
+            this.txtCompId.Location = new System.Drawing.Point(157, 59);
             this.txtCompId.Name = "txtCompId";
             this.txtCompId.ReadOnly = true;
-            this.txtCompId.Size = new System.Drawing.Size(191, 20);
+            this.txtCompId.Size = new System.Drawing.Size(174, 20);
             this.txtCompId.TabIndex = 1;
             // 
             // lblCompId
             // 
             this.lblCompId.AutoSize = true;
-            this.lblCompId.Location = new System.Drawing.Point(36, 74);
+            this.lblCompId.Location = new System.Drawing.Point(83, 62);
             this.lblCompId.Name = "lblCompId";
             this.lblCompId.Size = new System.Drawing.Size(68, 13);
             this.lblCompId.TabIndex = 0;
@@ -221,9 +257,11 @@ namespace GroupT_MobileShopeePrj
             // 
             // tabPageModel
             // 
+            this.tabPageModel.Controls.Add(this.lvwListOfModel);
+            this.tabPageModel.Controls.Add(this.lblListOfModel);
             this.tabPageModel.Controls.Add(this.btnAddModel);
-            this.tabPageModel.Controls.Add(this.lblModelName);
-            this.tabPageModel.Controls.Add(this.txtModelName);
+            this.tabPageModel.Controls.Add(this.lblModelNum);
+            this.tabPageModel.Controls.Add(this.txtModelNum);
             this.tabPageModel.Controls.Add(this.cmbCName);
             this.tabPageModel.Controls.Add(this.lblCName);
             this.tabPageModel.Controls.Add(this.txtModelId);
@@ -231,14 +269,14 @@ namespace GroupT_MobileShopeePrj
             this.tabPageModel.Location = new System.Drawing.Point(4, 22);
             this.tabPageModel.Name = "tabPageModel";
             this.tabPageModel.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageModel.Size = new System.Drawing.Size(374, 351);
+            this.tabPageModel.Size = new System.Drawing.Size(432, 421);
             this.tabPageModel.TabIndex = 1;
             this.tabPageModel.Text = "Model";
             this.tabPageModel.UseVisualStyleBackColor = true;
             // 
             // btnAddModel
             // 
-            this.btnAddModel.Location = new System.Drawing.Point(142, 184);
+            this.btnAddModel.Location = new System.Drawing.Point(182, 141);
             this.btnAddModel.Name = "btnAddModel";
             this.btnAddModel.Size = new System.Drawing.Size(75, 23);
             this.btnAddModel.TabIndex = 7;
@@ -246,34 +284,34 @@ namespace GroupT_MobileShopeePrj
             this.btnAddModel.UseVisualStyleBackColor = true;
             this.btnAddModel.Click += new System.EventHandler(this.btnAddModel_Click);
             // 
-            // lblModelName
+            // lblModelNum
             // 
-            this.lblModelName.AutoSize = true;
-            this.lblModelName.Location = new System.Drawing.Point(63, 125);
-            this.lblModelName.Name = "lblModelName";
-            this.lblModelName.Size = new System.Drawing.Size(73, 13);
-            this.lblModelName.TabIndex = 6;
-            this.lblModelName.Text = "Model Name :";
+            this.lblModelNum.AutoSize = true;
+            this.lblModelNum.Location = new System.Drawing.Point(92, 104);
+            this.lblModelNum.Name = "lblModelNum";
+            this.lblModelNum.Size = new System.Drawing.Size(67, 13);
+            this.lblModelNum.TabIndex = 6;
+            this.lblModelNum.Text = "Model Num :";
             // 
-            // txtModelName
+            // txtModelNum
             // 
-            this.txtModelName.Location = new System.Drawing.Point(142, 125);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(142, 20);
-            this.txtModelName.TabIndex = 5;
+            this.txtModelNum.Location = new System.Drawing.Point(165, 101);
+            this.txtModelNum.Name = "txtModelNum";
+            this.txtModelNum.Size = new System.Drawing.Size(142, 20);
+            this.txtModelNum.TabIndex = 5;
             // 
             // cmbCName
             // 
             this.cmbCName.FormattingEnabled = true;
-            this.cmbCName.Location = new System.Drawing.Point(142, 87);
+            this.cmbCName.Location = new System.Drawing.Point(165, 63);
             this.cmbCName.Name = "cmbCName";
-            this.cmbCName.Size = new System.Drawing.Size(121, 21);
+            this.cmbCName.Size = new System.Drawing.Size(142, 21);
             this.cmbCName.TabIndex = 4;
             // 
             // lblCName
             // 
             this.lblCName.AutoSize = true;
-            this.lblCName.Location = new System.Drawing.Point(48, 90);
+            this.lblCName.Location = new System.Drawing.Point(71, 66);
             this.lblCName.Name = "lblCName";
             this.lblCName.Size = new System.Drawing.Size(88, 13);
             this.lblCName.TabIndex = 3;
@@ -281,7 +319,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtModelId
             // 
-            this.txtModelId.Location = new System.Drawing.Point(142, 50);
+            this.txtModelId.Location = new System.Drawing.Point(165, 26);
             this.txtModelId.Name = "txtModelId";
             this.txtModelId.ReadOnly = true;
             this.txtModelId.Size = new System.Drawing.Size(142, 20);
@@ -290,7 +328,7 @@ namespace GroupT_MobileShopeePrj
             // lblModelId
             // 
             this.lblModelId.AutoSize = true;
-            this.lblModelId.Location = new System.Drawing.Point(80, 53);
+            this.lblModelId.Location = new System.Drawing.Point(103, 29);
             this.lblModelId.Name = "lblModelId";
             this.lblModelId.Size = new System.Drawing.Size(56, 13);
             this.lblModelId.TabIndex = 1;
@@ -298,6 +336,8 @@ namespace GroupT_MobileShopeePrj
             // 
             // tabPageMobile
             // 
+            this.tabPageMobile.Controls.Add(this.lvwListOfMobile);
+            this.tabPageMobile.Controls.Add(this.lblListOfMobile);
             this.tabPageMobile.Controls.Add(this.txtMobilePrice);
             this.tabPageMobile.Controls.Add(this.lblMobilePrice);
             this.tabPageMobile.Controls.Add(this.btnMobileInsert);
@@ -311,14 +351,14 @@ namespace GroupT_MobileShopeePrj
             this.tabPageMobile.Controls.Add(this.lblMobileCName);
             this.tabPageMobile.Location = new System.Drawing.Point(4, 22);
             this.tabPageMobile.Name = "tabPageMobile";
-            this.tabPageMobile.Size = new System.Drawing.Size(374, 351);
+            this.tabPageMobile.Size = new System.Drawing.Size(432, 421);
             this.tabPageMobile.TabIndex = 2;
             this.tabPageMobile.Text = "Mobile";
             this.tabPageMobile.UseVisualStyleBackColor = true;
             // 
             // txtMobilePrice
             // 
-            this.txtMobilePrice.Location = new System.Drawing.Point(139, 162);
+            this.txtMobilePrice.Location = new System.Drawing.Point(181, 108);
             this.txtMobilePrice.Name = "txtMobilePrice";
             this.txtMobilePrice.Size = new System.Drawing.Size(121, 20);
             this.txtMobilePrice.TabIndex = 10;
@@ -326,7 +366,7 @@ namespace GroupT_MobileShopeePrj
             // lblMobilePrice
             // 
             this.lblMobilePrice.AutoSize = true;
-            this.lblMobilePrice.Location = new System.Drawing.Point(93, 165);
+            this.lblMobilePrice.Location = new System.Drawing.Point(135, 111);
             this.lblMobilePrice.Name = "lblMobilePrice";
             this.lblMobilePrice.Size = new System.Drawing.Size(40, 13);
             this.lblMobilePrice.TabIndex = 9;
@@ -334,7 +374,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // btnMobileInsert
             // 
-            this.btnMobileInsert.Location = new System.Drawing.Point(123, 239);
+            this.btnMobileInsert.Location = new System.Drawing.Point(171, 182);
             this.btnMobileInsert.Name = "btnMobileInsert";
             this.btnMobileInsert.Size = new System.Drawing.Size(93, 22);
             this.btnMobileInsert.TabIndex = 8;
@@ -345,7 +385,7 @@ namespace GroupT_MobileShopeePrj
             // cmbMobileWarranty
             // 
             this.cmbMobileWarranty.FormattingEnabled = true;
-            this.cmbMobileWarranty.Location = new System.Drawing.Point(139, 200);
+            this.cmbMobileWarranty.Location = new System.Drawing.Point(181, 144);
             this.cmbMobileWarranty.Name = "cmbMobileWarranty";
             this.cmbMobileWarranty.Size = new System.Drawing.Size(121, 21);
             this.cmbMobileWarranty.TabIndex = 7;
@@ -353,7 +393,7 @@ namespace GroupT_MobileShopeePrj
             // lblMobileWarranty
             // 
             this.lblMobileWarranty.AutoSize = true;
-            this.lblMobileWarranty.Location = new System.Drawing.Point(48, 203);
+            this.lblMobileWarranty.Location = new System.Drawing.Point(90, 147);
             this.lblMobileWarranty.Name = "lblMobileWarranty";
             this.lblMobileWarranty.Size = new System.Drawing.Size(85, 13);
             this.lblMobileWarranty.TabIndex = 6;
@@ -361,7 +401,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtImeiNumber
             // 
-            this.txtImeiNumber.Location = new System.Drawing.Point(139, 129);
+            this.txtImeiNumber.Location = new System.Drawing.Point(181, 77);
             this.txtImeiNumber.Name = "txtImeiNumber";
             this.txtImeiNumber.Size = new System.Drawing.Size(121, 20);
             this.txtImeiNumber.TabIndex = 5;
@@ -369,7 +409,7 @@ namespace GroupT_MobileShopeePrj
             // lblMobileImeiNumber
             // 
             this.lblMobileImeiNumber.AutoSize = true;
-            this.lblMobileImeiNumber.Location = new System.Drawing.Point(55, 132);
+            this.lblMobileImeiNumber.Location = new System.Drawing.Point(97, 80);
             this.lblMobileImeiNumber.Name = "lblMobileImeiNumber";
             this.lblMobileImeiNumber.Size = new System.Drawing.Size(78, 13);
             this.lblMobileImeiNumber.TabIndex = 4;
@@ -378,7 +418,7 @@ namespace GroupT_MobileShopeePrj
             // cmbMobileModelNumber
             // 
             this.cmbMobileModelNumber.FormattingEnabled = true;
-            this.cmbMobileModelNumber.Location = new System.Drawing.Point(139, 95);
+            this.cmbMobileModelNumber.Location = new System.Drawing.Point(181, 46);
             this.cmbMobileModelNumber.Name = "cmbMobileModelNumber";
             this.cmbMobileModelNumber.Size = new System.Drawing.Size(121, 21);
             this.cmbMobileModelNumber.TabIndex = 3;
@@ -386,7 +426,7 @@ namespace GroupT_MobileShopeePrj
             // lblMobileModelNumber
             // 
             this.lblMobileModelNumber.AutoSize = true;
-            this.lblMobileModelNumber.Location = new System.Drawing.Point(48, 98);
+            this.lblMobileModelNumber.Location = new System.Drawing.Point(90, 49);
             this.lblMobileModelNumber.Name = "lblMobileModelNumber";
             this.lblMobileModelNumber.Size = new System.Drawing.Size(85, 13);
             this.lblMobileModelNumber.TabIndex = 2;
@@ -395,7 +435,7 @@ namespace GroupT_MobileShopeePrj
             // cmbMobileCName
             // 
             this.cmbMobileCName.FormattingEnabled = true;
-            this.cmbMobileCName.Location = new System.Drawing.Point(139, 55);
+            this.cmbMobileCName.Location = new System.Drawing.Point(181, 10);
             this.cmbMobileCName.Name = "cmbMobileCName";
             this.cmbMobileCName.Size = new System.Drawing.Size(121, 21);
             this.cmbMobileCName.TabIndex = 1;
@@ -404,7 +444,7 @@ namespace GroupT_MobileShopeePrj
             // lblMobileCName
             // 
             this.lblMobileCName.AutoSize = true;
-            this.lblMobileCName.Location = new System.Drawing.Point(42, 58);
+            this.lblMobileCName.Location = new System.Drawing.Point(84, 13);
             this.lblMobileCName.Name = "lblMobileCName";
             this.lblMobileCName.Size = new System.Drawing.Size(91, 13);
             this.lblMobileCName.TabIndex = 0;
@@ -412,6 +452,8 @@ namespace GroupT_MobileShopeePrj
             // 
             // tabUpdate
             // 
+            this.tabUpdate.Controls.Add(this.lvwListStockOfProduct);
+            this.tabUpdate.Controls.Add(this.lblListStockOfProduct);
             this.tabUpdate.Controls.Add(this.btnUpdate);
             this.tabUpdate.Controls.Add(this.txtUpdateAmount);
             this.tabUpdate.Controls.Add(this.lblUpdateAmount);
@@ -426,16 +468,17 @@ namespace GroupT_MobileShopeePrj
             this.tabUpdate.Location = new System.Drawing.Point(4, 22);
             this.tabUpdate.Name = "tabUpdate";
             this.tabUpdate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpdate.Size = new System.Drawing.Size(391, 389);
+            this.tabUpdate.Size = new System.Drawing.Size(439, 449);
             this.tabUpdate.TabIndex = 1;
             this.tabUpdate.Text = "Update Stock";
             this.tabUpdate.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(134, 258);
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.Location = new System.Drawing.Point(299, 78);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(112, 48);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -443,7 +486,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtUpdateAmount
             // 
-            this.txtUpdateAmount.Location = new System.Drawing.Point(144, 203);
+            this.txtUpdateAmount.Location = new System.Drawing.Point(120, 159);
             this.txtUpdateAmount.Name = "txtUpdateAmount";
             this.txtUpdateAmount.Size = new System.Drawing.Size(132, 20);
             this.txtUpdateAmount.TabIndex = 9;
@@ -451,7 +494,7 @@ namespace GroupT_MobileShopeePrj
             // lblUpdateAmount
             // 
             this.lblUpdateAmount.AutoSize = true;
-            this.lblUpdateAmount.Location = new System.Drawing.Point(83, 206);
+            this.lblUpdateAmount.Location = new System.Drawing.Point(62, 162);
             this.lblUpdateAmount.Name = "lblUpdateAmount";
             this.lblUpdateAmount.Size = new System.Drawing.Size(52, 13);
             this.lblUpdateAmount.TabIndex = 8;
@@ -459,7 +502,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtUpdateQuantity
             // 
-            this.txtUpdateQuantity.Location = new System.Drawing.Point(144, 165);
+            this.txtUpdateQuantity.Location = new System.Drawing.Point(120, 124);
             this.txtUpdateQuantity.Name = "txtUpdateQuantity";
             this.txtUpdateQuantity.Size = new System.Drawing.Size(132, 20);
             this.txtUpdateQuantity.TabIndex = 7;
@@ -467,7 +510,7 @@ namespace GroupT_MobileShopeePrj
             // lblUpdateQuantity
             // 
             this.lblUpdateQuantity.AutoSize = true;
-            this.lblUpdateQuantity.Location = new System.Drawing.Point(83, 168);
+            this.lblUpdateQuantity.Location = new System.Drawing.Point(59, 124);
             this.lblUpdateQuantity.Name = "lblUpdateQuantity";
             this.lblUpdateQuantity.Size = new System.Drawing.Size(55, 13);
             this.lblUpdateQuantity.TabIndex = 6;
@@ -476,7 +519,7 @@ namespace GroupT_MobileShopeePrj
             // cmbModelNumber
             // 
             this.cmbModelNumber.FormattingEnabled = true;
-            this.cmbModelNumber.Location = new System.Drawing.Point(144, 127);
+            this.cmbModelNumber.Location = new System.Drawing.Point(120, 88);
             this.cmbModelNumber.Name = "cmbModelNumber";
             this.cmbModelNumber.Size = new System.Drawing.Size(132, 21);
             this.cmbModelNumber.TabIndex = 5;
@@ -484,7 +527,7 @@ namespace GroupT_MobileShopeePrj
             // lblUpdateModelNumber
             // 
             this.lblUpdateModelNumber.AutoSize = true;
-            this.lblUpdateModelNumber.Location = new System.Drawing.Point(56, 130);
+            this.lblUpdateModelNumber.Location = new System.Drawing.Point(29, 88);
             this.lblUpdateModelNumber.Name = "lblUpdateModelNumber";
             this.lblUpdateModelNumber.Size = new System.Drawing.Size(82, 13);
             this.lblUpdateModelNumber.TabIndex = 4;
@@ -493,7 +536,7 @@ namespace GroupT_MobileShopeePrj
             // cmbUpdateCName
             // 
             this.cmbUpdateCName.FormattingEnabled = true;
-            this.cmbUpdateCName.Location = new System.Drawing.Point(144, 86);
+            this.cmbUpdateCName.Location = new System.Drawing.Point(120, 52);
             this.cmbUpdateCName.Name = "cmbUpdateCName";
             this.cmbUpdateCName.Size = new System.Drawing.Size(132, 21);
             this.cmbUpdateCName.TabIndex = 3;
@@ -502,7 +545,7 @@ namespace GroupT_MobileShopeePrj
             // lblUpdateCName
             // 
             this.lblUpdateCName.AutoSize = true;
-            this.lblUpdateCName.Location = new System.Drawing.Point(47, 89);
+            this.lblUpdateCName.Location = new System.Drawing.Point(23, 55);
             this.lblUpdateCName.Name = "lblUpdateCName";
             this.lblUpdateCName.Size = new System.Drawing.Size(91, 13);
             this.lblUpdateCName.TabIndex = 2;
@@ -510,7 +553,7 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtTransId
             // 
-            this.txtTransId.Location = new System.Drawing.Point(144, 52);
+            this.txtTransId.Location = new System.Drawing.Point(120, 18);
             this.txtTransId.Name = "txtTransId";
             this.txtTransId.ReadOnly = true;
             this.txtTransId.Size = new System.Drawing.Size(132, 20);
@@ -519,7 +562,7 @@ namespace GroupT_MobileShopeePrj
             // lblTransId
             // 
             this.lblTransId.AutoSize = true;
-            this.lblTransId.Location = new System.Drawing.Point(81, 55);
+            this.lblTransId.Location = new System.Drawing.Point(57, 21);
             this.lblTransId.Name = "lblTransId";
             this.lblTransId.Size = new System.Drawing.Size(57, 13);
             this.lblTransId.TabIndex = 0;
@@ -531,7 +574,7 @@ namespace GroupT_MobileShopeePrj
             this.tabReport.Location = new System.Drawing.Point(4, 22);
             this.tabReport.Name = "tabReport";
             this.tabReport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReport.Size = new System.Drawing.Size(391, 389);
+            this.tabReport.Size = new System.Drawing.Size(439, 449);
             this.tabReport.TabIndex = 2;
             this.tabReport.Text = "Sale Report";
             this.tabReport.UseVisualStyleBackColor = true;
@@ -747,6 +790,8 @@ namespace GroupT_MobileShopeePrj
             // 
             // tabEmployee
             // 
+            this.tabEmployee.Controls.Add(this.lvwListOfUser);
+            this.tabEmployee.Controls.Add(this.lblListOfUser);
             this.tabEmployee.Controls.Add(this.btnAddUser);
             this.tabEmployee.Controls.Add(this.txtHint);
             this.tabEmployee.Controls.Add(this.lblHint);
@@ -764,16 +809,16 @@ namespace GroupT_MobileShopeePrj
             this.tabEmployee.Controls.Add(this.lblEmployeeName);
             this.tabEmployee.Location = new System.Drawing.Point(4, 22);
             this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Size = new System.Drawing.Size(391, 389);
+            this.tabEmployee.Size = new System.Drawing.Size(439, 449);
             this.tabEmployee.TabIndex = 3;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(206, 317);
+            this.btnAddUser.Location = new System.Drawing.Point(157, 166);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(75, 23);
+            this.btnAddUser.Size = new System.Drawing.Size(115, 36);
             this.btnAddUser.TabIndex = 14;
             this.btnAddUser.Text = "Add";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -781,15 +826,15 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtHint
             // 
-            this.txtHint.Location = new System.Drawing.Point(128, 281);
+            this.txtHint.Location = new System.Drawing.Point(312, 131);
             this.txtHint.Name = "txtHint";
-            this.txtHint.Size = new System.Drawing.Size(153, 20);
+            this.txtHint.Size = new System.Drawing.Size(111, 20);
             this.txtHint.TabIndex = 13;
             // 
             // lblHint
             // 
             this.lblHint.AutoSize = true;
-            this.lblHint.Location = new System.Drawing.Point(90, 285);
+            this.lblHint.Location = new System.Drawing.Point(274, 134);
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new System.Drawing.Size(32, 13);
             this.lblHint.TabIndex = 12;
@@ -797,16 +842,16 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtRetypePassword
             // 
-            this.txtRetypePassword.Location = new System.Drawing.Point(128, 238);
+            this.txtRetypePassword.Location = new System.Drawing.Point(312, 93);
             this.txtRetypePassword.Name = "txtRetypePassword";
-            this.txtRetypePassword.Size = new System.Drawing.Size(153, 20);
+            this.txtRetypePassword.Size = new System.Drawing.Size(111, 20);
             this.txtRetypePassword.TabIndex = 11;
             this.txtRetypePassword.UseSystemPasswordChar = true;
             // 
             // lblRetypePassword
             // 
             this.lblRetypePassword.AutoSize = true;
-            this.lblRetypePassword.Location = new System.Drawing.Point(26, 249);
+            this.lblRetypePassword.Location = new System.Drawing.Point(210, 96);
             this.lblRetypePassword.Name = "lblRetypePassword";
             this.lblRetypePassword.Size = new System.Drawing.Size(96, 13);
             this.lblRetypePassword.TabIndex = 10;
@@ -814,16 +859,16 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(128, 200);
+            this.txtPassword.Location = new System.Drawing.Point(312, 50);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(153, 20);
+            this.txtPassword.Size = new System.Drawing.Size(111, 20);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(63, 207);
+            this.lblPassword.Location = new System.Drawing.Point(247, 53);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(59, 13);
             this.lblPassword.TabIndex = 8;
@@ -831,15 +876,15 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(128, 156);
+            this.txtUserName.Location = new System.Drawing.Point(80, 131);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(153, 20);
+            this.txtUserName.Size = new System.Drawing.Size(108, 20);
             this.txtUserName.TabIndex = 7;
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(56, 163);
+            this.lblUserName.Location = new System.Drawing.Point(8, 134);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(66, 13);
             this.lblUserName.TabIndex = 6;
@@ -847,15 +892,15 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtMobile
             // 
-            this.txtMobile.Location = new System.Drawing.Point(128, 117);
+            this.txtMobile.Location = new System.Drawing.Point(58, 90);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(153, 20);
+            this.txtMobile.Size = new System.Drawing.Size(130, 20);
             this.txtMobile.TabIndex = 5;
             // 
             // lblMobile
             // 
             this.lblMobile.AutoSize = true;
-            this.lblMobile.Location = new System.Drawing.Point(78, 124);
+            this.lblMobile.Location = new System.Drawing.Point(8, 93);
             this.lblMobile.Name = "lblMobile";
             this.lblMobile.Size = new System.Drawing.Size(44, 13);
             this.lblMobile.TabIndex = 4;
@@ -863,15 +908,15 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(128, 80);
+            this.txtAddress.Location = new System.Drawing.Point(65, 50);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(153, 20);
+            this.txtAddress.Size = new System.Drawing.Size(123, 20);
             this.txtAddress.TabIndex = 3;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(71, 87);
+            this.lblAddress.Location = new System.Drawing.Point(8, 53);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(51, 13);
             this.lblAddress.TabIndex = 2;
@@ -879,25 +924,293 @@ namespace GroupT_MobileShopeePrj
             // 
             // txtEmployeeName
             // 
-            this.txtEmployeeName.Location = new System.Drawing.Point(128, 41);
+            this.txtEmployeeName.Location = new System.Drawing.Point(173, 13);
             this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(153, 20);
+            this.txtEmployeeName.Size = new System.Drawing.Size(175, 20);
             this.txtEmployeeName.TabIndex = 1;
             // 
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Location = new System.Drawing.Point(32, 48);
+            this.lblEmployeeName.Location = new System.Drawing.Point(77, 16);
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(90, 13);
             this.lblEmployeeName.TabIndex = 0;
             this.lblEmployeeName.Text = "Employee Name :";
             // 
+            // lblListOfCompany
+            // 
+            this.lblListOfCompany.AutoSize = true;
+            this.lblListOfCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListOfCompany.Location = new System.Drawing.Point(154, 193);
+            this.lblListOfCompany.Name = "lblListOfCompany";
+            this.lblListOfCompany.Size = new System.Drawing.Size(118, 13);
+            this.lblListOfCompany.TabIndex = 5;
+            this.lblListOfCompany.Text = "LIST OF COMPANY";
+            // 
+            // lvwListOfCompany
+            // 
+            this.lvwListOfCompany.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chCompId,
+            this.chCName});
+            this.lvwListOfCompany.FullRowSelect = true;
+            this.lvwListOfCompany.GridLines = true;
+            this.lvwListOfCompany.HideSelection = false;
+            this.lvwListOfCompany.Location = new System.Drawing.Point(19, 228);
+            this.lvwListOfCompany.MultiSelect = false;
+            this.lvwListOfCompany.Name = "lvwListOfCompany";
+            this.lvwListOfCompany.Size = new System.Drawing.Size(398, 172);
+            this.lvwListOfCompany.TabIndex = 6;
+            this.lvwListOfCompany.UseCompatibleStateImageBehavior = false;
+            this.lvwListOfCompany.View = System.Windows.Forms.View.Details;
+            // 
+            // chCompId
+            // 
+            this.chCompId.Text = "Company ID";
+            this.chCompId.Width = 188;
+            // 
+            // chCName
+            // 
+            this.chCName.Text = "Company Name";
+            this.chCName.Width = 335;
+            // 
+            // lblListOfModel
+            // 
+            this.lblListOfModel.AutoSize = true;
+            this.lblListOfModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListOfModel.Location = new System.Drawing.Point(156, 194);
+            this.lblListOfModel.Name = "lblListOfModel";
+            this.lblListOfModel.Size = new System.Drawing.Size(101, 13);
+            this.lblListOfModel.TabIndex = 8;
+            this.lblListOfModel.Text = "LIST OF MODEL";
+            // 
+            // lvwListOfModel
+            // 
+            this.lvwListOfModel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chModelId,
+            this.chModelCName,
+            this.chModelNum,
+            this.chQty});
+            this.lvwListOfModel.GridLines = true;
+            this.lvwListOfModel.HideSelection = false;
+            this.lvwListOfModel.Location = new System.Drawing.Point(17, 220);
+            this.lvwListOfModel.MultiSelect = false;
+            this.lvwListOfModel.Name = "lvwListOfModel";
+            this.lvwListOfModel.Size = new System.Drawing.Size(397, 175);
+            this.lvwListOfModel.TabIndex = 9;
+            this.lvwListOfModel.UseCompatibleStateImageBehavior = false;
+            this.lvwListOfModel.View = System.Windows.Forms.View.Details;
+            // 
+            // chModelId
+            // 
+            this.chModelId.Text = "Model ID";
+            this.chModelId.Width = 62;
+            // 
+            // chModelCName
+            // 
+            this.chModelCName.Text = "Company Name";
+            this.chModelCName.Width = 136;
+            // 
+            // chModelNum
+            // 
+            this.chModelNum.Text = "Model Num";
+            this.chModelNum.Width = 129;
+            // 
+            // chQty
+            // 
+            this.chQty.Text = "AvailableQty";
+            this.chQty.Width = 219;
+            // 
+            // lblListOfMobile
+            // 
+            this.lblListOfMobile.AutoSize = true;
+            this.lblListOfMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListOfMobile.Location = new System.Drawing.Point(168, 220);
+            this.lblListOfMobile.Name = "lblListOfMobile";
+            this.lblListOfMobile.Size = new System.Drawing.Size(104, 13);
+            this.lblListOfMobile.TabIndex = 11;
+            this.lblListOfMobile.Text = "LIST OF MOBILE";
+            // 
+            // lvwListOfMobile
+            // 
+            this.lvwListOfMobile.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chMobileCName,
+            this.chMobileModelNum,
+            this.chMobileImeiNum,
+            this.chMobilePrice,
+            this.chMobileWarranty,
+            this.chMobileStatus});
+            this.lvwListOfMobile.FullRowSelect = true;
+            this.lvwListOfMobile.GridLines = true;
+            this.lvwListOfMobile.HideSelection = false;
+            this.lvwListOfMobile.Location = new System.Drawing.Point(6, 245);
+            this.lvwListOfMobile.MultiSelect = false;
+            this.lvwListOfMobile.Name = "lvwListOfMobile";
+            this.lvwListOfMobile.Size = new System.Drawing.Size(423, 155);
+            this.lvwListOfMobile.TabIndex = 12;
+            this.lvwListOfMobile.UseCompatibleStateImageBehavior = false;
+            this.lvwListOfMobile.View = System.Windows.Forms.View.Details;
+            // 
+            // chMobileCName
+            // 
+            this.chMobileCName.Text = "Company Name";
+            this.chMobileCName.Width = 66;
+            // 
+            // chMobileModelNum
+            // 
+            this.chMobileModelNum.Text = "Model Num";
+            this.chMobileModelNum.Width = 87;
+            // 
+            // chMobileImeiNum
+            // 
+            this.chMobileImeiNum.Text = "IMEI NUM";
+            this.chMobileImeiNum.Width = 75;
+            // 
+            // chMobilePrice
+            // 
+            this.chMobilePrice.Text = "Price";
+            this.chMobilePrice.Width = 86;
+            // 
+            // chMobileWarranty
+            // 
+            this.chMobileWarranty.Text = "Warranty Date";
+            this.chMobileWarranty.Width = 135;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(348, 485);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(101, 28);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Đăng Xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblListStockOfProduct
+            // 
+            this.lblListStockOfProduct.AutoSize = true;
+            this.lblListStockOfProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListStockOfProduct.Location = new System.Drawing.Point(146, 209);
+            this.lblListStockOfProduct.Name = "lblListStockOfProduct";
+            this.lblListStockOfProduct.Size = new System.Drawing.Size(163, 13);
+            this.lblListStockOfProduct.TabIndex = 11;
+            this.lblListStockOfProduct.Text = "LIST STOCK OF PRODUCT";
+            // 
+            // lvwListStockOfProduct
+            // 
+            this.lvwListStockOfProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chUpdateTransId,
+            this.chUpdateCName,
+            this.chUpdateModelNum,
+            this.chUpdateQuantity,
+            this.chUpdateAmount,
+            this.chUpdateDate});
+            this.lvwListStockOfProduct.FullRowSelect = true;
+            this.lvwListStockOfProduct.GridLines = true;
+            this.lvwListStockOfProduct.HideSelection = false;
+            this.lvwListStockOfProduct.Location = new System.Drawing.Point(6, 238);
+            this.lvwListStockOfProduct.MultiSelect = false;
+            this.lvwListStockOfProduct.Name = "lvwListStockOfProduct";
+            this.lvwListStockOfProduct.Size = new System.Drawing.Size(427, 180);
+            this.lvwListStockOfProduct.TabIndex = 12;
+            this.lvwListStockOfProduct.UseCompatibleStateImageBehavior = false;
+            this.lvwListStockOfProduct.View = System.Windows.Forms.View.Details;
+            // 
+            // chUpdateTransId
+            // 
+            this.chUpdateTransId.Text = "Trans ID";
+            this.chUpdateTransId.Width = 47;
+            // 
+            // chUpdateCName
+            // 
+            this.chUpdateCName.Text = "Company Name";
+            this.chUpdateCName.Width = 90;
+            // 
+            // chUpdateModelNum
+            // 
+            this.chUpdateModelNum.Text = "Model Num";
+            this.chUpdateModelNum.Width = 72;
+            // 
+            // chUpdateQuantity
+            // 
+            this.chUpdateQuantity.Text = "Quantity";
+            this.chUpdateQuantity.Width = 80;
+            // 
+            // chUpdateAmount
+            // 
+            this.chUpdateAmount.Text = "Amount";
+            this.chUpdateAmount.Width = 77;
+            // 
+            // chUpdateDate
+            // 
+            this.chUpdateDate.Text = "Date";
+            // 
+            // chMobileStatus
+            // 
+            this.chMobileStatus.Text = "Status";
+            // 
+            // lblListOfUser
+            // 
+            this.lblListOfUser.AutoSize = true;
+            this.lblListOfUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListOfUser.Location = new System.Drawing.Point(170, 214);
+            this.lblListOfUser.Name = "lblListOfUser";
+            this.lblListOfUser.Size = new System.Drawing.Size(92, 13);
+            this.lblListOfUser.TabIndex = 15;
+            this.lblListOfUser.Text = "LIST OF USER";
+            // 
+            // lvwListOfUser
+            // 
+            this.lvwListOfUser.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chUserName,
+            this.chUserAddress,
+            this.chUserMobile,
+            this.chUserUName,
+            this.chUserHint});
+            this.lvwListOfUser.FullRowSelect = true;
+            this.lvwListOfUser.GridLines = true;
+            this.lvwListOfUser.HideSelection = false;
+            this.lvwListOfUser.Location = new System.Drawing.Point(27, 230);
+            this.lvwListOfUser.MultiSelect = false;
+            this.lvwListOfUser.Name = "lvwListOfUser";
+            this.lvwListOfUser.Size = new System.Drawing.Size(380, 199);
+            this.lvwListOfUser.TabIndex = 16;
+            this.lvwListOfUser.UseCompatibleStateImageBehavior = false;
+            this.lvwListOfUser.View = System.Windows.Forms.View.Details;
+            // 
+            // chUserName
+            // 
+            this.chUserName.Text = "Employee Name";
+            this.chUserName.Width = 85;
+            // 
+            // chUserAddress
+            // 
+            this.chUserAddress.Text = "Address";
+            this.chUserAddress.Width = 95;
+            // 
+            // chUserMobile
+            // 
+            this.chUserMobile.Text = "Mobile Phone";
+            this.chUserMobile.Width = 82;
+            // 
+            // chUserUName
+            // 
+            this.chUserUName.Text = "Username";
+            this.chUserUName.Width = 66;
+            // 
+            // chUserHint
+            // 
+            this.chUserHint.Text = "Hint";
+            this.chUserHint.Width = 137;
+            // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 450);
+            this.ClientSize = new System.Drawing.Size(461, 525);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tabControlAdminHome);
             this.Name = "AdminHomePage";
             this.Text = "AdminHomePage";
@@ -950,8 +1263,8 @@ namespace GroupT_MobileShopeePrj
         private System.Windows.Forms.Label lblCName;
         private System.Windows.Forms.TextBox txtModelId;
         private System.Windows.Forms.Button btnAddModel;
-        private System.Windows.Forms.Label lblModelName;
-        private System.Windows.Forms.TextBox txtModelName;
+        private System.Windows.Forms.Label lblModelNum;
+        private System.Windows.Forms.TextBox txtModelNum;
         private System.Windows.Forms.Label lblTransId;
         private System.Windows.Forms.ComboBox cmbModelNumber;
         private System.Windows.Forms.Label lblUpdateModelNumber;
@@ -1014,5 +1327,39 @@ namespace GroupT_MobileShopeePrj
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.TextBox txtHint;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.ListView lvwListOfCompany;
+        private System.Windows.Forms.Label lblListOfCompany;
+        private System.Windows.Forms.ColumnHeader chCompId;
+        private System.Windows.Forms.ColumnHeader chCName;
+        private System.Windows.Forms.ListView lvwListOfModel;
+        private System.Windows.Forms.ColumnHeader chModelId;
+        private System.Windows.Forms.ColumnHeader chModelCName;
+        private System.Windows.Forms.ColumnHeader chModelNum;
+        private System.Windows.Forms.ColumnHeader chQty;
+        private System.Windows.Forms.Label lblListOfModel;
+        private System.Windows.Forms.Label lblListOfMobile;
+        private System.Windows.Forms.ListView lvwListOfMobile;
+        private System.Windows.Forms.ColumnHeader chMobileCName;
+        private System.Windows.Forms.ColumnHeader chMobileModelNum;
+        private System.Windows.Forms.ColumnHeader chMobileImeiNum;
+        private System.Windows.Forms.ColumnHeader chMobilePrice;
+        private System.Windows.Forms.ColumnHeader chMobileWarranty;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.ListView lvwListStockOfProduct;
+        private System.Windows.Forms.ColumnHeader chUpdateTransId;
+        private System.Windows.Forms.ColumnHeader chUpdateCName;
+        private System.Windows.Forms.ColumnHeader chUpdateModelNum;
+        private System.Windows.Forms.ColumnHeader chUpdateQuantity;
+        private System.Windows.Forms.ColumnHeader chUpdateAmount;
+        private System.Windows.Forms.Label lblListStockOfProduct;
+        private System.Windows.Forms.ColumnHeader chUpdateDate;
+        private System.Windows.Forms.ColumnHeader chMobileStatus;
+        private System.Windows.Forms.Label lblListOfUser;
+        private System.Windows.Forms.ListView lvwListOfUser;
+        private System.Windows.Forms.ColumnHeader chUserName;
+        private System.Windows.Forms.ColumnHeader chUserAddress;
+        private System.Windows.Forms.ColumnHeader chUserMobile;
+        private System.Windows.Forms.ColumnHeader chUserUName;
+        private System.Windows.Forms.ColumnHeader chUserHint;
     }
 }

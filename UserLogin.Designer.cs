@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserLogin));
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -36,52 +37,52 @@
             this.lnkForgot = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnMember = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnHelp = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(134, 119);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblUsername.Location = new System.Drawing.Point(123, 138);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(113, 25);
+            this.lblUsername.Size = new System.Drawing.Size(57, 13);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "UserName";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(260, 113);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(6);
+            this.txtUsername.Location = new System.Drawing.Point(186, 135);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(278, 31);
+            this.txtUsername.Size = new System.Drawing.Size(141, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(260, 190);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(6);
+            this.txtPassword.Location = new System.Drawing.Point(186, 175);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(278, 31);
+            this.txtPassword.Size = new System.Drawing.Size(141, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(134, 196);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblPassword.Location = new System.Drawing.Point(123, 178);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(106, 25);
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
             // lnkAdmin
             // 
             this.lnkAdmin.AutoSize = true;
-            this.lnkAdmin.Location = new System.Drawing.Point(548, 42);
-            this.lnkAdmin.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lnkAdmin.Location = new System.Drawing.Point(304, 236);
             this.lnkAdmin.Name = "lnkAdmin";
-            this.lnkAdmin.Size = new System.Drawing.Size(72, 25);
+            this.lnkAdmin.Size = new System.Drawing.Size(36, 13);
             this.lnkAdmin.TabIndex = 4;
             this.lnkAdmin.TabStop = true;
             this.lnkAdmin.Text = "Admin";
@@ -90,10 +91,9 @@
             // lnkForgot
             // 
             this.lnkForgot.AutoSize = true;
-            this.lnkForgot.Location = new System.Drawing.Point(356, 321);
-            this.lnkForgot.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lnkForgot.Location = new System.Drawing.Point(196, 236);
             this.lnkForgot.Name = "lnkForgot";
-            this.lnkForgot.Size = new System.Drawing.Size(186, 25);
+            this.lnkForgot.Size = new System.Drawing.Size(92, 13);
             this.lnkForgot.TabIndex = 5;
             this.lnkForgot.TabStop = true;
             this.lnkForgot.Text = "Forgot Password?";
@@ -101,10 +101,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(392, 240);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLogin.Location = new System.Drawing.Point(252, 201);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(150, 44);
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -112,19 +111,53 @@
             // 
             // btnMember
             // 
-            this.btnMember.Location = new System.Drawing.Point(12, 27);
+            this.btnMember.Location = new System.Drawing.Point(8, 64);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMember.Name = "btnMember";
-            this.btnMember.Size = new System.Drawing.Size(172, 54);
+            this.btnMember.Size = new System.Drawing.Size(73, 24);
             this.btnMember.TabIndex = 7;
-            this.btnMember.Text = "Member ";
+            this.btnMember.Text = "Thành Viên";
             this.btnMember.UseVisualStyleBackColor = true;
             this.btnMember.Click += new System.EventHandler(this.btnMember_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(172, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(141, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(8, 92);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(73, 24);
+            this.btnHelp.TabIndex = 10;
+            this.btnHelp.Text = "Trợ Giúp";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            // 
             // frmUserLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 381);
+            this.ClientSize = new System.Drawing.Size(469, 278);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnMember);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lnkForgot);
@@ -133,9 +166,10 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblUsername);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmUserLogin";
             this.Text = "User Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,6 +185,9 @@
         private System.Windows.Forms.LinkLabel lnkForgot;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnMember;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

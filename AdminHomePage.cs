@@ -15,13 +15,29 @@ namespace GroupT_MobileShopeePrj
         public AdminHomePage()
         {
             InitializeComponent();
+            //Part of Company
             AutoGenCompanyId();
+            LoadCompanyList();
+
+            //Part of Model
             AutoGenerateModelId();
             LoadCompanyNames(cmbCName);
+            LoadModelList();
+
+            //Part of Transaction
             AutoGenTransId();
             LoadCompanyNames(cmbUpdateCName);
+            LoadStockList();
+
+            //Part of Mobile
             LoadCompanyNames(cmbMobileCName);
             LoadWarrantyOptions();
+            LoadMobileList();
+
+            //Part Of User
+            LoadUserList();
+
+            //Part of Report
             SetupListView(lvwSingleDateReport);
             SetupListView(lvwDateRangeReport);
         }
@@ -84,6 +100,7 @@ namespace GroupT_MobileShopeePrj
                 LoadCompanyNames(cmbCName);
                 LoadCompanyNames(cmbUpdateCName);
                 LoadCompanyNames(cmbMobileCName);
+                LoadCompanyList();
             }
             catch (Exception ex)
             {
@@ -94,6 +111,39 @@ namespace GroupT_MobileShopeePrj
                 conn.Close();
             }
         }
+        //---Function ListView For Company---
+        void LoadCompanyList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                cmd = new SqlCommand("SELECT CompId, CName FROM tbl_Company", conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                lvwListOfCompany.Items.Clear(); // Dọn trước
+
+                while (dr.Read())
+                {
+                    ListViewItem item = new ListViewItem(dr["CompId"].ToString());
+                    item.SubItems.Add(dr["CName"].ToString());
+                    lvwListOfCompany.Items.Add(item);
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load Company: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+
 
         // --- Model ---
         void AutoGenerateModelId()
@@ -122,39 +172,7 @@ namespace GroupT_MobileShopeePrj
             }
         }
 
-        string AutoGenModelNum(string modelName)
-        {
-            string prefix = "";
-            if (!string.IsNullOrWhiteSpace(modelName))
-            {
-                // Lấy chữ đầu, chuyển thành chữ thường hoặc chữ hoa tùy bạn
-                prefix = modelName.Trim()[0].ToString().ToUpper(); // Đề xuất: dùng ToUpper cho thống nhất
-            }
-
-            try
-            {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
-
-                cmd = new SqlCommand("SELECT COUNT(*) FROM tbl_Model WHERE LEFT(ModelNum, 1) = @Prefix", conn);
-                cmd.Parameters.AddWithValue("@Prefix", prefix);
-
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-                count++;
-
-                return $"{prefix}{count:D2}";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error generating ModelNum: " + ex.Message);
-                return prefix + "01";
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                    conn.Close();
-            }
-        }
+        
 
 
         void LoadCompanyNames(ComboBox comboBox)
@@ -188,7 +206,7 @@ namespace GroupT_MobileShopeePrj
 
         private void btnAddModel_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtModelName.Text))
+            if (string.IsNullOrWhiteSpace(txtModelNum.Text))
             {
                 MessageBox.Show("Vui lòng nhập tên model!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -202,8 +220,15 @@ namespace GroupT_MobileShopeePrj
             }
 
             string modelId = txtModelId.Text.Trim();
-            string modelName = txtModelName.Text.Trim();
-            string modelNum = AutoGenModelNum(modelName);
+            string modelName = txtModelNum.Text.Trim();
+            string modelNum = txtModelNum.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(modelNum))
+            {
+                MessageBox.Show("Vui lòng nhập ModelNum!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             try
             {
@@ -214,11 +239,13 @@ namespace GroupT_MobileShopeePrj
                 cmd.Parameters.AddWithValue("@ModelNum", modelNum);
                 cmd.Parameters.AddWithValue("@AvailableQty", 0);
 
+
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Đã thêm Model thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 AutoGenerateModelId();   // Sinh ID mới
-                txtModelName.Clear();
+                txtModelNum.Clear();
+                LoadModelList();         // Tải lại danh sách Model
             }
             catch (Exception ex)
             {
@@ -229,9 +256,46 @@ namespace GroupT_MobileShopeePrj
                 conn.Close();
             }
         }
+        //--- Function ListView For Model ---
+        void LoadModelList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
 
+                string query = @"
+            SELECT m.ModelId, c.CName, m.ModelNum, m.AvailableQty
+            FROM tbl_Model m
+            JOIN tbl_Company c ON m.CompId = c.CompId";
 
+                cmd = new SqlCommand(query, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
 
+                lvwListOfModel.Items.Clear();
+
+                while (dr.Read())
+                {
+                    ListViewItem item = new ListViewItem(dr["ModelId"].ToString());
+                    item.SubItems.Add(dr["CName"].ToString());
+                    item.SubItems.Add(dr["ModelNum"].ToString());
+                    item.SubItems.Add(dr["AvailableQty"].ToString());
+
+                    lvwListOfModel.Items.Add(item);
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load Model: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
 
 
         // --- Transaction ---
@@ -336,6 +400,7 @@ namespace GroupT_MobileShopeePrj
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cập nhật thành công!");
+                LoadStockList();
 
                 AutoGenTransId();
                 txtUpdateQuantity.Clear();
@@ -358,6 +423,49 @@ namespace GroupT_MobileShopeePrj
                 LoadModelNumbers(compId, cmbModelNumber);
             }
         }
+
+        //--- Function ListView For Transaction ---
+        void LoadStockList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                string query = @"
+            SELECT t.TransId, c.CName, m.ModelNum, t.Quantity, t.Amount, t.Date
+            FROM tbl_Transaction t
+            JOIN tbl_Model m ON t.ModelId = m.ModelId
+            JOIN tbl_Company c ON m.CompId = c.CompId
+            ORDER BY t.TransId DESC";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                lvwListStockOfProduct.Items.Clear();
+
+                while (reader.Read())
+                {
+                    ListViewItem item = new ListViewItem(reader["TransId"].ToString());
+                    item.SubItems.Add(reader["CName"].ToString());
+                    item.SubItems.Add(reader["ModelNum"].ToString());
+                    item.SubItems.Add(reader["Quantity"].ToString());
+                    item.SubItems.Add(Convert.ToDecimal(reader["Amount"]).ToString("N0"));
+                    item.SubItems.Add(Convert.ToDateTime(reader["Date"]).ToString("dd/MM/yyyy"));
+
+                    lvwListStockOfProduct.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải danh sách stock: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
         //--- Mobile ---
         private void cmbMobileCName_SelectedIndexChanged(object sender, EventArgs e)
@@ -448,6 +556,7 @@ namespace GroupT_MobileShopeePrj
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm Mobile thành công!");
+                LoadMobileList();
 
                 ClearFields();
             }
@@ -474,6 +583,51 @@ namespace GroupT_MobileShopeePrj
         {
             InsertMobileData();
         }
+
+        //--- Fuction ListView For Mobile ---
+        void LoadMobileList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                string query = @"
+            SELECT mo.IMEINO, c.CName, m.ModelNum, mo.Status, mo.Warranty, mo.Price
+            FROM tbl_Mobile mo
+            JOIN tbl_Model m ON mo.ModelId = m.ModelId
+            JOIN tbl_Company c ON m.CompId = c.CompId";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                lvwListOfMobile.Items.Clear();
+
+                while (dr.Read())
+                {
+                    ListViewItem item = new ListViewItem(dr["IMEINO"].ToString());
+                    item.SubItems.Add(dr["CName"].ToString());
+                    item.SubItems.Add(dr["ModelNum"].ToString());
+                    item.SubItems.Add(Convert.ToDecimal(dr["Price"]).ToString("N0"));
+                    item.SubItems.Add(Convert.ToDateTime(dr["Warranty"]).ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(dr["Status"].ToString());
+
+                    lvwListOfMobile.Items.Add(item);
+                }
+
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load Mobile: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+
 
         // --- Report ---
         void SetupListView(ListView lv)
@@ -691,6 +845,7 @@ namespace GroupT_MobileShopeePrj
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm User thành công!");
+                LoadUserList();
 
                 ClearUserFields();
             }
@@ -715,6 +870,48 @@ namespace GroupT_MobileShopeePrj
             txtHint.Clear();
         }
 
+        //--- Function ListView For User ---
+        void LoadUserList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
 
+                string query = "SELECT EmployeeName, Address, MobileNumber, UserName, Hint FROM tbl_User";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                lvwListOfUser.Items.Clear();
+
+                while (reader.Read())
+                {
+                    ListViewItem item = new ListViewItem(reader["EmployeeName"].ToString());
+                    item.SubItems.Add(reader["Address"].ToString());
+                    item.SubItems.Add(reader["MobileNumber"].ToString());
+                    item.SubItems.Add(reader["UserName"].ToString());
+                    item.SubItems.Add(reader["Hint"].ToString());
+
+                    lvwListOfUser.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load user: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdminLogin loginForm = new frmAdminLogin();
+            loginForm.FormClosed += (s, args) => this.Close();
+            loginForm.Show();
+        }
     }
 }
