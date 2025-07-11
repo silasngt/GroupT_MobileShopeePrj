@@ -38,5 +38,12 @@ namespace GroupT_MobileShopeePrj
                 MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lnkAdminForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ForgotPassword forgotForm = new ForgotPassword(); // tạo đối tượng form ForgotPassword
+            forgotForm.Show(); // hiển thị form
+            this.Hide(); // ẩn form hiện tại nếu muốn (tùy)
+        }
     }
 }
