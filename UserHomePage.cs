@@ -523,5 +523,108 @@ namespace GroupT_MobileShopeePrj
                     conn.Close();
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            // 1. Validate IMEI input
+            string imeiNumber = txtSearchIMEI.Text.Trim();
+
+            // Kiểm tra IMEI không được để trống
+            if (string.IsNullOrWhiteSpace(imeiNumber))
+            {
+                MessageBox.Show("Vui lòng nhập số IMEI!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSearchIMEI.Focus();
+                return;
+            }
+
+            // Kiểm tra IMEI phải có đúng 16 chữ số
+            if (!Regex.IsMatch(imeiNumber, @"^\d{16}$"))
+            {
+                MessageBox.Show("Số IMEI phải có đúng 16 chữ số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSearchIMEI.Focus();
+                return;
+            }
+
+            // 2. Truy vấn dữ liệu
+            SearchCustomerByIMEI(imeiNumber);
+        }
+
+        private void SearchCustomerByIMEI(string imeiNumber)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                // Query để lấy thông tin từ tbl_Sales và tbl_Customer dựa trên IMEI
+                string query = @"
+            SELECT c.Cust_Name AS CustomerName, 
+                   c.MobileNumber, 
+                   c.EmailId, 
+                   c.Address, 
+                   s.PurchageDate, 
+                   s.Price
+            FROM tbl_Sales s 
+            INNER JOIN tbl_Customer c ON s.CustId = c.CustId
+            WHERE s.IMEINO = @IMEI";
+
+                cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@IMEI", imeiNumber);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                // Hiển thị kết quả
+                if (dt.Rows.Count > 0)
+                {
+                    // Nếu tìm thấy dữ liệu, hiển thị trên DataGridView
+                    dgvSearchResults.DataSource = dt;
+
+                    // Format lại các cột (nếu cần)
+                    if (dgvSearchResults.Columns.Contains("PurchageDate"))
+                    {
+                        dgvSearchResults.Columns["PurchageDate"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                        dgvSearchResults.Columns["PurchageDate"].HeaderText = "Purchase Date";
+                    }
+
+                    if (dgvSearchResults.Columns.Contains("Price"))
+                    {
+                        dgvSearchResults.Columns["Price"].DefaultCellStyle.Format = "N0";
+                    }
+
+                    if (dgvSearchResults.Columns.Contains("CustomerName"))
+                    {
+                        dgvSearchResults.Columns["CustomerName"].HeaderText = "Customer Name";
+                    }
+
+                    if (dgvSearchResults.Columns.Contains("MobileNumber"))
+                    {
+                        dgvSearchResults.Columns["MobileNumber"].HeaderText = "Mobile Number";
+                    }
+
+                    if (dgvSearchResults.Columns.Contains("EmailId"))
+                    {
+                        dgvSearchResults.Columns["EmailId"].HeaderText = "Email ID";
+                    }
+                }
+                else
+                {
+                    // Nếu không tìm thấy dữ liệu
+                    MessageBox.Show("Không tìm thấy thông tin cho số IMEI này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvSearchResults.DataSource = null; // Xóa dữ liệu cũ nếu có
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tìm kiếm dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
     }
 }

@@ -56,9 +56,15 @@
             this.lblSelectCompany = new System.Windows.Forms.Label();
             this.lblViewStockTitle = new System.Windows.Forms.Label();
             this.tabPageSearchCustomer = new System.Windows.Forms.TabPage();
+            this.dgvSearchResults = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchIMEI = new System.Windows.Forms.TextBox();
+            this.lblEnterIMEI = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageSales.SuspendLayout();
             this.tabPageViewStock.SuspendLayout();
+            this.tabPageSearchCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -377,6 +383,10 @@
             // 
             // tabPageSearchCustomer
             // 
+            this.tabPageSearchCustomer.Controls.Add(this.dgvSearchResults);
+            this.tabPageSearchCustomer.Controls.Add(this.btnSearch);
+            this.tabPageSearchCustomer.Controls.Add(this.txtSearchIMEI);
+            this.tabPageSearchCustomer.Controls.Add(this.lblEnterIMEI);
             this.tabPageSearchCustomer.Location = new System.Drawing.Point(8, 45);
             this.tabPageSearchCustomer.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageSearchCustomer.Name = "tabPageSearchCustomer";
@@ -385,6 +395,53 @@
             this.tabPageSearchCustomer.TabIndex = 2;
             this.tabPageSearchCustomer.Text = "searchCustomerbyIMEI";
             this.tabPageSearchCustomer.UseVisualStyleBackColor = true;
+            // 
+            // dgvSearchResults
+            // 
+            this.dgvSearchResults.AllowUserToAddRows = false;
+            this.dgvSearchResults.AllowUserToDeleteRows = false;
+            this.dgvSearchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchResults.Location = new System.Drawing.Point(50, 200);
+            this.dgvSearchResults.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvSearchResults.Name = "dgvSearchResults";
+            this.dgvSearchResults.ReadOnly = true;
+            this.dgvSearchResults.RowHeadersWidth = 82;
+            this.dgvSearchResults.Size = new System.Drawing.Size(1480, 550);
+            this.dgvSearchResults.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSearch.Location = new System.Drawing.Point(700, 120);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(150, 50);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchIMEI
+            // 
+            this.txtSearchIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearchIMEI.Location = new System.Drawing.Point(470, 49);
+            this.txtSearchIMEI.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearchIMEI.MaxLength = 16;
+            this.txtSearchIMEI.Name = "txtSearchIMEI";
+            this.txtSearchIMEI.Size = new System.Drawing.Size(450, 44);
+            this.txtSearchIMEI.TabIndex = 1;
+            // 
+            // lblEnterIMEI
+            // 
+            this.lblEnterIMEI.AutoSize = true;
+            this.lblEnterIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblEnterIMEI.Location = new System.Drawing.Point(150, 56);
+            this.lblEnterIMEI.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblEnterIMEI.Name = "lblEnterIMEI";
+            this.lblEnterIMEI.Size = new System.Drawing.Size(289, 37);
+            this.lblEnterIMEI.TabIndex = 0;
+            this.lblEnterIMEI.Text = "Enter IMEI Number";
             // 
             // UserHomePage
             // 
@@ -402,6 +459,9 @@
             this.tabPageSales.PerformLayout();
             this.tabPageViewStock.ResumeLayout(false);
             this.tabPageViewStock.PerformLayout();
+            this.tabPageSearchCustomer.ResumeLayout(false);
+            this.tabPageSearchCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchResults)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,5 +498,11 @@
         private System.Windows.Forms.ComboBox cmbViewStockModel;
         private System.Windows.Forms.Label lblStockAvailable;
         private System.Windows.Forms.TextBox txtStockAvailable;
+
+        // Search Customer controls
+        private System.Windows.Forms.Label lblEnterIMEI;
+        private System.Windows.Forms.TextBox txtSearchIMEI;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvSearchResults;
     }
 }
