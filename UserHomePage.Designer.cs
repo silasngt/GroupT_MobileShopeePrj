@@ -48,9 +48,17 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.tabPageViewStock = new System.Windows.Forms.TabPage();
+            this.txtStockAvailable = new System.Windows.Forms.TextBox();
+            this.lblStockAvailable = new System.Windows.Forms.Label();
+            this.cmbViewStockModel = new System.Windows.Forms.ComboBox();
+            this.lblSelectModel = new System.Windows.Forms.Label();
+            this.cmbViewStockCompany = new System.Windows.Forms.ComboBox();
+            this.lblSelectCompany = new System.Windows.Forms.Label();
+            this.lblViewStockTitle = new System.Windows.Forms.Label();
             this.tabPageSearchCustomer = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPageSales.SuspendLayout();
+            this.tabPageViewStock.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,7 +69,7 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1600, 865);
@@ -87,9 +95,9 @@
             this.tabPageSales.Controls.Add(this.txtCustomerName);
             this.tabPageSales.Controls.Add(this.lblCustomerName);
             this.tabPageSales.Location = new System.Drawing.Point(8, 45);
-            this.tabPageSales.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageSales.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageSales.Name = "tabPageSales";
-            this.tabPageSales.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageSales.Padding = new System.Windows.Forms.Padding(6);
             this.tabPageSales.Size = new System.Drawing.Size(1584, 812);
             this.tabPageSales.TabIndex = 0;
             this.tabPageSales.Text = "Sales";
@@ -99,7 +107,7 @@
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSubmit.Location = new System.Drawing.Point(700, 692);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(6);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(200, 67);
             this.btnSubmit.TabIndex = 16;
@@ -111,7 +119,7 @@
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPrice.Location = new System.Drawing.Point(500, 615);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(6);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(396, 44);
@@ -124,7 +132,7 @@
             this.lblPrice.Location = new System.Drawing.Point(100, 621);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(187, 37);
+            this.lblPrice.Size = new System.Drawing.Size(176, 37);
             this.lblPrice.TabIndex = 14;
             this.lblPrice.Text = "Price/Piece";
             // 
@@ -134,7 +142,7 @@
             this.cmbIMEI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbIMEI.FormattingEnabled = true;
             this.cmbIMEI.Location = new System.Drawing.Point(500, 538);
-            this.cmbIMEI.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbIMEI.Margin = new System.Windows.Forms.Padding(6);
             this.cmbIMEI.Name = "cmbIMEI";
             this.cmbIMEI.Size = new System.Drawing.Size(396, 45);
             this.cmbIMEI.TabIndex = 13;
@@ -147,7 +155,7 @@
             this.lblIMEI.Location = new System.Drawing.Point(100, 544);
             this.lblIMEI.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblIMEI.Name = "lblIMEI";
-            this.lblIMEI.Size = new System.Drawing.Size(215, 37);
+            this.lblIMEI.Size = new System.Drawing.Size(204, 37);
             this.lblIMEI.TabIndex = 12;
             this.lblIMEI.Text = "IMEI Number";
             // 
@@ -157,7 +165,7 @@
             this.cmbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbModel.FormattingEnabled = true;
             this.cmbModel.Location = new System.Drawing.Point(500, 462);
-            this.cmbModel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbModel.Margin = new System.Windows.Forms.Padding(6);
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(396, 45);
             this.cmbModel.TabIndex = 11;
@@ -170,7 +178,7 @@
             this.lblModel.Location = new System.Drawing.Point(100, 467);
             this.lblModel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(239, 37);
+            this.lblModel.Size = new System.Drawing.Size(227, 37);
             this.lblModel.TabIndex = 10;
             this.lblModel.Text = "Model Number";
             // 
@@ -180,7 +188,7 @@
             this.cmbCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbCompany.FormattingEnabled = true;
             this.cmbCompany.Location = new System.Drawing.Point(500, 385);
-            this.cmbCompany.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cmbCompany.Margin = new System.Windows.Forms.Padding(6);
             this.cmbCompany.Name = "cmbCompany";
             this.cmbCompany.Size = new System.Drawing.Size(396, 45);
             this.cmbCompany.TabIndex = 9;
@@ -193,7 +201,7 @@
             this.lblCompany.Location = new System.Drawing.Point(100, 390);
             this.lblCompany.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCompany.Name = "lblCompany";
-            this.lblCompany.Size = new System.Drawing.Size(261, 37);
+            this.lblCompany.Size = new System.Drawing.Size(249, 37);
             this.lblCompany.TabIndex = 8;
             this.lblCompany.Text = "Company Name";
             // 
@@ -201,7 +209,7 @@
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEmail.Location = new System.Drawing.Point(500, 308);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(396, 44);
             this.txtEmail.TabIndex = 7;
@@ -213,7 +221,7 @@
             this.lblEmail.Location = new System.Drawing.Point(100, 313);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(145, 37);
+            this.lblEmail.Size = new System.Drawing.Size(137, 37);
             this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "Email ID";
             // 
@@ -221,7 +229,7 @@
             // 
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtAddress.Location = new System.Drawing.Point(500, 192);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(6);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(396, 92);
@@ -234,7 +242,7 @@
             this.lblAddress.Location = new System.Drawing.Point(100, 198);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(142, 37);
+            this.lblAddress.Size = new System.Drawing.Size(135, 37);
             this.lblAddress.TabIndex = 4;
             this.lblAddress.Text = "Address";
             // 
@@ -242,7 +250,7 @@
             // 
             this.txtMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtMobile.Location = new System.Drawing.Point(500, 115);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(6);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(396, 44);
             this.txtMobile.TabIndex = 3;
@@ -254,7 +262,7 @@
             this.lblMobile.Location = new System.Drawing.Point(100, 121);
             this.lblMobile.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(247, 37);
+            this.lblMobile.Size = new System.Drawing.Size(234, 37);
             this.lblMobile.TabIndex = 2;
             this.lblMobile.Text = "Mobile Number";
             // 
@@ -262,7 +270,7 @@
             // 
             this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtCustomerName.Location = new System.Drawing.Point(500, 38);
-            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(6);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(396, 44);
             this.txtCustomerName.TabIndex = 1;
@@ -270,32 +278,109 @@
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F
-                );
+            this.lblCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblCustomerName.Location = new System.Drawing.Point(100, 44);
             this.lblCustomerName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(264, 37);
+            this.lblCustomerName.Size = new System.Drawing.Size(251, 37);
             this.lblCustomerName.TabIndex = 0;
             this.lblCustomerName.Text = "Customer Name";
             // 
             // tabPageViewStock
             // 
+            this.tabPageViewStock.Controls.Add(this.txtStockAvailable);
+            this.tabPageViewStock.Controls.Add(this.lblStockAvailable);
+            this.tabPageViewStock.Controls.Add(this.cmbViewStockModel);
+            this.tabPageViewStock.Controls.Add(this.lblSelectModel);
+            this.tabPageViewStock.Controls.Add(this.cmbViewStockCompany);
+            this.tabPageViewStock.Controls.Add(this.lblSelectCompany);
+            this.tabPageViewStock.Controls.Add(this.lblViewStockTitle);
             this.tabPageViewStock.Location = new System.Drawing.Point(8, 45);
-            this.tabPageViewStock.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageViewStock.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageViewStock.Name = "tabPageViewStock";
-            this.tabPageViewStock.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageViewStock.Padding = new System.Windows.Forms.Padding(6);
             this.tabPageViewStock.Size = new System.Drawing.Size(1584, 812);
             this.tabPageViewStock.TabIndex = 1;
             this.tabPageViewStock.Text = "viewstock";
             this.tabPageViewStock.UseVisualStyleBackColor = true;
             // 
+            // txtStockAvailable
+            // 
+            this.txtStockAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtStockAvailable.Location = new System.Drawing.Point(569, 287);
+            this.txtStockAvailable.Name = "txtStockAvailable";
+            this.txtStockAvailable.ReadOnly = true;
+            this.txtStockAvailable.Size = new System.Drawing.Size(350, 44);
+            this.txtStockAvailable.TabIndex = 6;
+            // 
+            // lblStockAvailable
+            // 
+            this.lblStockAvailable.AutoSize = true;
+            this.lblStockAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblStockAvailable.Location = new System.Drawing.Point(200, 290);
+            this.lblStockAvailable.Name = "lblStockAvailable";
+            this.lblStockAvailable.Size = new System.Drawing.Size(253, 37);
+            this.lblStockAvailable.TabIndex = 5;
+            this.lblStockAvailable.Text = "Stock Available :";
+            // 
+            // cmbViewStockModel
+            // 
+            this.cmbViewStockModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViewStockModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbViewStockModel.FormattingEnabled = true;
+            this.cmbViewStockModel.Location = new System.Drawing.Point(569, 212);
+            this.cmbViewStockModel.Name = "cmbViewStockModel";
+            this.cmbViewStockModel.Size = new System.Drawing.Size(350, 45);
+            this.cmbViewStockModel.TabIndex = 4;
+            this.cmbViewStockModel.SelectedIndexChanged += new System.EventHandler(this.cmbViewStockModel_SelectedIndexChanged);
+            // 
+            // lblSelectModel
+            // 
+            this.lblSelectModel.AutoSize = true;
+            this.lblSelectModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblSelectModel.Location = new System.Drawing.Point(200, 220);
+            this.lblSelectModel.Name = "lblSelectModel";
+            this.lblSelectModel.Size = new System.Drawing.Size(341, 37);
+            this.lblSelectModel.TabIndex = 3;
+            this.lblSelectModel.Text = "Select Model Number :";
+            // 
+            // cmbViewStockCompany
+            // 
+            this.cmbViewStockCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViewStockCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cmbViewStockCompany.FormattingEnabled = true;
+            this.cmbViewStockCompany.Location = new System.Drawing.Point(569, 142);
+            this.cmbViewStockCompany.Name = "cmbViewStockCompany";
+            this.cmbViewStockCompany.Size = new System.Drawing.Size(350, 45);
+            this.cmbViewStockCompany.TabIndex = 2;
+            this.cmbViewStockCompany.SelectedIndexChanged += new System.EventHandler(this.cmbViewStockCompany_SelectedIndexChanged);
+            // 
+            // lblSelectCompany
+            // 
+            this.lblSelectCompany.AutoSize = true;
+            this.lblSelectCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblSelectCompany.Location = new System.Drawing.Point(200, 150);
+            this.lblSelectCompany.Name = "lblSelectCompany";
+            this.lblSelectCompany.Size = new System.Drawing.Size(363, 37);
+            this.lblSelectCompany.TabIndex = 1;
+            this.lblSelectCompany.Text = "Select Company Name :";
+            // 
+            // lblViewStockTitle
+            // 
+            this.lblViewStockTitle.AutoSize = true;
+            this.lblViewStockTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblViewStockTitle.Location = new System.Drawing.Point(650, 50);
+            this.lblViewStockTitle.Name = "lblViewStockTitle";
+            this.lblViewStockTitle.Size = new System.Drawing.Size(246, 51);
+            this.lblViewStockTitle.TabIndex = 0;
+            this.lblViewStockTitle.Text = "View Stock";
+            // 
             // tabPageSearchCustomer
             // 
             this.tabPageSearchCustomer.Location = new System.Drawing.Point(8, 45);
-            this.tabPageSearchCustomer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageSearchCustomer.Margin = new System.Windows.Forms.Padding(6);
             this.tabPageSearchCustomer.Name = "tabPageSearchCustomer";
-            this.tabPageSearchCustomer.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPageSearchCustomer.Padding = new System.Windows.Forms.Padding(6);
             this.tabPageSearchCustomer.Size = new System.Drawing.Size(1584, 812);
             this.tabPageSearchCustomer.TabIndex = 2;
             this.tabPageSearchCustomer.Text = "searchCustomerbyIMEI";
@@ -307,7 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserHomePage";
@@ -315,6 +400,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageSales.ResumeLayout(false);
             this.tabPageSales.PerformLayout();
+            this.tabPageViewStock.ResumeLayout(false);
+            this.tabPageViewStock.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -342,5 +429,14 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnSubmit;
+
+        // View Stock controls
+        private System.Windows.Forms.Label lblViewStockTitle;
+        private System.Windows.Forms.Label lblSelectCompany;
+        private System.Windows.Forms.ComboBox cmbViewStockCompany;
+        private System.Windows.Forms.Label lblSelectModel;
+        private System.Windows.Forms.ComboBox cmbViewStockModel;
+        private System.Windows.Forms.Label lblStockAvailable;
+        private System.Windows.Forms.TextBox txtStockAvailable;
     }
 }

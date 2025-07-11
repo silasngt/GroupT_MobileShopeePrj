@@ -25,6 +25,7 @@ namespace GroupT_MobileShopeePrj
         private void UserHomePage_Load(object sender, EventArgs e)
         {
             LoadCompanies();
+            LoadViewStockCompanies();
         }
 
         // Tạo Customer ID tuần tự theo cách Admin
@@ -409,5 +410,118 @@ namespace GroupT_MobileShopeePrj
             }
         }
 
+
+        private void cmbViewStockCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Clear model combo box và stock text
+            cmbViewStockModel.DataSource = null;
+            cmbViewStockModel.Items.Clear();
+            txtStockAvailable.Clear();
+
+            if (cmbViewStockCompany.SelectedValue != null && cmbViewStockCompany.SelectedIndex != -1)
+            {
+                string companyId = cmbViewStockCompany.SelectedValue.ToString();
+                LoadViewStockModelsByCompany(companyId);
+            }
+        }
+        private void LoadViewStockModelsByCompany(string companyId)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                cmd = new SqlCommand("SELECT ModelId, ModelNum FROM tbl_Model WHERE CompId = @CompId", conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@CompId", companyId);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+
+                cmbViewStockModel.DataSource = dt;
+                cmbViewStockModel.DisplayMember = "ModelNum";
+                cmbViewStockModel.ValueMember = "ModelId";
+                cmbViewStockModel.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu model: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        private void cmbViewStockModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtStockAvailable.Clear();
+
+            if (cmbViewStockModel.SelectedValue != null && cmbViewStockModel.SelectedIndex != -1)
+            {
+                string modelId = cmbViewStockModel.SelectedValue.ToString();
+                LoadStockAvailable(modelId);
+            }
+        }
+        private void LoadStockAvailable(string modelId)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                // Lấy số lượng available từ tbl_Model
+                cmd = new SqlCommand("SELECT AvailableQty FROM tbl_Model WHERE ModelId = @ModelId", conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@ModelId", modelId);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    txtStockAvailable.Text = result.ToString();
+                }
+                else
+                {
+                    txtStockAvailable.Text = "0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu stock: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
+        private void LoadViewStockCompanies()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                cmd = new SqlCommand("SELECT CompId, CName FROM tbl_Company", conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+
+                cmbViewStockCompany.DataSource = dt;
+                cmbViewStockCompany.DisplayMember = "CName";
+                cmbViewStockCompany.ValueMember = "CompId";
+                cmbViewStockCompany.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu công ty cho View Stock: " + ex.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
     }
 }
