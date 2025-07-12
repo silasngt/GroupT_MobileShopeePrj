@@ -72,7 +72,10 @@
             this.tabControl1.Controls.Add(this.tabPageSales);
             this.tabControl1.Controls.Add(this.tabPageViewStock);
             this.tabControl1.Controls.Add(this.tabPageSearchCustomer);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.None;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -425,12 +428,28 @@
             this.lblEnterIMEI.TabIndex = 0;
             this.lblEnterIMEI.Text = "Enter IMEI Number";
             // 
+            // btnLogout
+            // 
+            
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnLogout.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnLogout.Location = new System.Drawing.Point(707, 456);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(83, 30);
+            this.btnLogout.TabIndex = 1;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // UserHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 450);
+            this.ClientSize = new System.Drawing.Size(802, 495);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnLogout);
             this.Name = "UserHomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserHomePage";
@@ -485,5 +504,7 @@
         private System.Windows.Forms.TextBox txtSearchIMEI;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvSearchResults;
+
+        private System.Windows.Forms.Button btnLogout;
     }
 }
