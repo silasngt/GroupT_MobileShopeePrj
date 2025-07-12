@@ -45,5 +45,21 @@ namespace GroupT_MobileShopeePrj
             forgotForm.Show(); // hiển thị form
             this.Hide(); // ẩn form hiện tại nếu muốn (tùy)
         }
+
+        private void btnMember_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Member memberForm = new Member();
+            memberForm.FormClosed += (s, args) => this.Close();
+            memberForm.Show();
+        }
+
+        private void btnAdminHelp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HelpPage helpForm = new HelpPage();
+            helpForm.FormClosed += (s, args) => this.Close();
+            helpForm.Show();
+        }
     }
 }

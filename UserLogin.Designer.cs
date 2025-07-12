@@ -112,7 +112,7 @@
             // btnMember
             // 
             this.btnMember.Location = new System.Drawing.Point(8, 64);
-            this.btnMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnMember.Name = "btnMember";
             this.btnMember.Size = new System.Drawing.Size(73, 24);
             this.btnMember.TabIndex = 7;
@@ -149,6 +149,7 @@
             this.btnHelp.TabIndex = 10;
             this.btnHelp.Text = "Trợ Giúp";
             this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // frmUserLogin
             // 

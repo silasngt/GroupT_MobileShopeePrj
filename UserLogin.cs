@@ -84,5 +84,13 @@ namespace GroupT_MobileShopeePrj
             memberForm.Show();
             this.Hide();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HelpPage helpForm = new HelpPage();
+            helpForm.FormClosed += (s, args) => this.Close();
+            helpForm.Show();
+        }
     }
 }
